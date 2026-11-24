@@ -1,0 +1,28 @@
+{
+  "_commentaire": "Couches du haut vers le bas. Valeurs de conductivité = ordres de grandeur à remplacer par vos mesures. sigma_k : incertitude relative a priori. interfaces : R (m²K/W) et son incertitude absolue.",
+  "target": 0,
+  "layers": [
+    {"name": "SiN",   "d": "50nm",  "kx": 2.5, "kz": 2.5, "rho": 3000, "cp": 700, "sigma_k": 0.10},
+    {"name": "GaNcap","d": "5nm",   "kx": 130, "kz": 130, "rho": 6150, "cp": 490, "sigma_k": 0.30},
+    {"name": "AlGaN", "d": "20nm",  "kx": 20,  "kz": 20,  "rho": 5400, "cp": 560, "sigma_k": 0.30},
+    {"name": "GaN",   "d": "300nm", "kx": 130, "kz": 130, "rho": 6150, "cp": 490, "sigma_k": 0.20},
+    {"name": "AlN",   "d": "60nm",  "kx": 40,  "kz": 40,  "rho": 3260, "cp": 740, "sigma_k": 0.30},
+    {"name": "SiC",   "d": "300um", "kx": 390, "kz": 330, "rho": 3210, "cp": 690, "sigma_k": 0.05}
+  ],
+  "interfaces": [
+    {"R": 0, "sigma": 2e-9},
+    {"R": 0, "sigma": 2e-9},
+    {"R": 0, "sigma": 2e-9},
+    {"R": 0, "sigma": 2e-9},
+    {"R": 1e-8, "sigma": 5e-9}
+  ],
+  "bottom": {"type": "contact", "R": 1e-5, "sigma_ln": 1.0},
+  "heater": {"metal": "Pt", "h": "100nm", "R_contact": 1e-8, "sigma_R_contact": 5e-9,
+             "sigma_scale": 0.02, "w_unc": "0.1um"},
+  "design": {"w_min": "1um", "w_max": "100um", "n_widths": 20, "n_heaters": 3,
+             "f_min": 20, "f_max": 30000, "f_lockin": 102000, "n_freq": 12,
+             "P_target": 10, "j_max": 1e10, "lin_max": 0.01, "dT_dc_max": 10,
+             "L_min": "0.5mm", "L_max": "5mm", "objective": "max"},
+  "noise": {"v_noise": 1e-8, "rel_noise": 1e-3},
+  "prior_C": 0.05
+}

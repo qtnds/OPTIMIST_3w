@@ -1,0 +1,15 @@
+{
+  "_commentaire": "Échantillon de référence pour valider le banc (phase F3) : silice fondue massive, k = 1.38 W/m/K.",
+  "target": 0,
+  "layers": [
+    {"name": "silice", "d": "500um", "k": 1.38, "rho": 2200, "cp": 740, "sigma_k": 0.05}
+  ],
+  "interfaces": [],
+  "bottom": {"type": "contact", "R": 1e-5, "sigma_ln": 1.0},
+  "heater": {"metal": "Pt", "h": "100nm", "R_contact": 0, "sigma_R_contact": 1e-9, "sigma_scale": 0.02, "w_unc": "0.1um"},
+  "design": {"w_min": "10um", "w_max": "10um", "n_widths": 1, "n_heaters": 1,
+             "f_min": 5, "f_max": 1000, "f_lockin": 102000, "n_freq": 15,
+             "P_target": 1, "j_max": 1e10, "lin_max": 0.01, "dT_dc_max": 10,
+             "L_min": "0.5mm", "L_max": "10mm"},
+  "noise": {"v_noise": 1e-8, "rel_noise": 1e-3}
+}
